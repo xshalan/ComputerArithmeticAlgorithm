@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<JFXMasonryPane minHeight="315.0" minWidth="475.0" prefHeight="321.0" prefWidth="483.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alusimulation.FXMLDocumentController">
+   <children>
+      <JFXButton id="both" onAction="#both" prefHeight="148.0" prefWidth="200.0" ripplerFill="#f8f8f8" style="-fx-background-color: #00aba9;" text="BOTH Algorithm" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Cairo-Regular" size="25.0" />
+         </font>
+      </JFXButton>
+      <JFXButton prefHeight="102.0" prefWidth="200.0" style="-fx-background-color: #00a300;" text="Non-Restoring Division" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></JFXButton>
+      <JFXButton prefHeight="102.0" prefWidth="111.0" style="-fx-background-color: #ee1111;" text="Restoring Division" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Cairo-Regular" size="15.0" />
+         </font></JFXButton>
+      <JFXButton prefHeight="102.0" prefWidth="111.0" style="-fx-background-color: #FF5722;" textAlignment="CENTER" />
+      <JFXButton prefHeight="102.0" prefWidth="111.0" style="-fx-background-color: #8E24AA;" textAlignment="CENTER" />
+      <JFXButton prefHeight="102.0" prefWidth="111.0" style="-fx-background-color: #FBC02D;" textAlignment="CENTER" />
+   </children>
+</JFXMasonryPane>

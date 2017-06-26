@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="406.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="alusimulation.BothAlgorithmController">
+   <children>
+      <Pane fx:id="buttonpane" prefHeight="406.0" prefWidth="200.0" style="-fx-background-color: #81D4FA;">
+         <children>
+            <JFXTextField fx:id="first_num" layoutX="33.0" layoutY="22.0" promptText="First number">
+               <font>
+                  <Font name="Cairo Bold" size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="second_num" layoutX="33.0" layoutY="76.0" promptText="Second number">
+               <font>
+                  <Font name="Cairo Bold" size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXCheckBox fx:id="check_step" layoutX="47.0" layoutY="129.0" text="Step by Step">
+               <font>
+                  <Font name="Cairo Bold" size="13.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXButton fx:id="start_both" layoutX="74.0" layoutY="175.0" onAction="#start_both" style="-fx-background-color: #FAFAFA;" text="Start">
+               <font>
+                  <Font name="Exo Medium" size="15.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="16.0" layoutY="31.0" text="M" textFill="WHITE">
+               <font>
+                  <Font name="Exo Light" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="84.0" text="Q" textFill="WHITE">
+               <font>
+                  <Font name="Exo Medium" size="12.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="16.0" layoutY="361.0" onAction="#show_flowchart" ripplerFill="WHITE" style="-fx-background-color: #64B5F6;" text="Show Flowchart" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Cairo-Regular" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="next" layoutX="141.0" layoutY="361.0" onAction="#next_step" ripplerFill="WHITE" style="-fx-background-color: #64B5F6;" text="Next" visible="false">
+               <font>
+                  <Font name="Cairo-Regular" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Label layoutX="240.0" layoutY="32.0" text="Cycle" />
+      <Label layoutX="340.0" layoutY="32.0" text="A" />
+      <Label layoutX="384.0" layoutY="32.0" text="Q" />
+      <Label layoutX="421.0" layoutY="32.0" text="Q-1" />
+      <JFXListView fx:id="cycle_list" layoutX="214.0" layoutY="53.0" prefHeight="294.0" prefWidth="92.0" style="-jfx-vertical-gap: 10;" stylesheets="@../../../../../../Desktop/listview.css" verticalGap="10.0">
+         <styleClass>
+            <String fx:value="jfx-list-view" />
+            <String fx:value="jfx-rippler" />
+            <String fx:value="jfx-list-cell" />
+         </styleClass>
+      </JFXListView>
+      <JFXListView fx:id="steps_listview" layoutX="321.0" layoutY="56.0" prefHeight="294.0" prefWidth="191.0" />
+      <Label layoutX="468.0" layoutY="32.0" text="M" />
+   </children>
+</AnchorPane>
