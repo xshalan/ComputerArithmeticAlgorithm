@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alusimulation.RestoringController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="220.0" style="-fx-background-color: #00a300;">
+         <children>
+            <JFXTextField fx:id="res_num1" focusColor="#ffc40d" layoutX="40.0" layoutY="14.0" promptText="First Number" unFocusColor="WHITE">
+               <font>
+                  <Font name="Cairo-Regular" size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="res_num2" focusColor="#ffc40d" layoutX="40.0" layoutY="59.0" promptText="Second Number" unFocusColor="WHITE">
+               <font>
+                  <Font name="Cairo-Regular" size="13.0" />
+               </font>
+            </JFXTextField>
+            <JFXCheckBox fx:id="chk_res_step" checkedColor="#ffc40d" layoutX="57.0" layoutY="122.0" text="Step by step" textFill="WHITE" unCheckedColor="WHITE">
+               <font>
+                  <Font name="Cairo-Regular" size="13.0" />
+               </font>
+            </JFXCheckBox>
+            <JFXButton fx:id="start" layoutX="77.0" layoutY="183.0" onAction="#start" style="-fx-background-color: #ffc40d;" text="   Start   " textFill="WHITE">
+               <font>
+                  <Font name="Cairo-Regular" size="13.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#00000089" height="5.0" radius="2.0" spread="0.13" width="5.0" />
+               </effect>
+            </JFXButton>
+            <JFXButton fx:id="show_flowchart" layoutX="14.0" layoutY="361.0" style="-fx-background-color: #037f03;" text="Show Flowchart" textFill="WHITE" />
+            <JFXButton fx:id="next" layoutX="165.0" layoutY="361.0" style="-fx-background-color: #037f03;" text="Next" textFill="WHITE" visible="false" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <JFXListView fx:id="cycle_listview" layoutX="256.0" layoutY="67.0" prefHeight="286.0" prefWidth="89.0" visible="false" />
+      <JFXListView fx:id="num_listview" layoutX="357.0" layoutY="67.0" prefHeight="286.0" prefWidth="178.0" visible="false" />
+      <Label fx:id="cycle" layoutX="286.0" layoutY="37.0" text="cycle" />
+      <Label fx:id="anum" layoutX="369.0" layoutY="37.0" text="A" />
+      <Label fx:id="qnum" layoutX="424.0" layoutY="37.0" text="Q" />
+      <Label fx:id="mnum" layoutX="478.0" layoutY="37.0" text="M" />
+   </children>
+</AnchorPane>

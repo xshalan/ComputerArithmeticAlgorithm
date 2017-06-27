@@ -12,6 +12,8 @@ import java.util.ArrayList;
  * @author noura
  */
 public class Restoring {
+    ArrayList<String> CycList = new ArrayList<> () ;
+    ArrayList<String> numList = new ArrayList<> () ;
 
     /** Function to shift shift array **/
     public void leftShift(int A[])
@@ -61,9 +63,9 @@ public class Restoring {
         {  
             
             if (i == 4)
-                System.out.print(" ");
+                System.out.print("     ");
             if (i == 8)
-                System.out.print(" ");
+                System.out.print("     ");
             System.out.print(P[i]);
             
         } 
@@ -82,7 +84,8 @@ public class Restoring {
     }
     
     public int division(int n1, int n2)
-    {
+    {   String cycle = "Init" ;
+        String number = "" ;
         int[] m = binary(n1);
         int[] m1 = binary(n2);
         int[] r = binary(-n2);        
@@ -100,12 +103,17 @@ public class Restoring {
         display(S, 'S');
         display(P, 'P'); 
         display(r, 'R');
+        
+        saveInitNumber(P,S,numList) ;
         System.out.println();
+        
+        CycList.add(cycle) ;
         for (int i = 0; i < 4; i++) {
+            cycle = "cycle : " + (i+1) ;
+            CycList.add(cycle) ;
             leftShift(P);  // left shifting 
-            display(P, 'R');
+            
             add(P, r);
-            display(P, 'P');
             if (P[0] == 0) {
                 // A > 0
                 P[P.length - 1] = 1; //set Q0 = 1
@@ -114,27 +122,53 @@ public class Restoring {
                 P[P.length - 1] = 0; //set Q0 = 0
                 add(P, S); // Restoring
             }
-            display(P, 'S');
-        }
-        /* 
-        for (int i = 0; i < 4; i++)
-        {   
-            
-            
-            if (P[7] == 0 && P[8] == 0);
-                // do nothing            
-            else if (P[7] == 1 && P[8] == 0)
-                add(P, S);                            
-            else if (P[7] == 0 && P[8] == 1)
-                add(P, A);            
-            else if (P[7] == 1 && P[8] == 1);
-                // do nothing
- 
-            rightShift(P);
-            saveArrayNumber(P, (ArrayList) numbers_list);
             display(P, 'P');
-        } */
+            saveArrayNumber(P,numList); 
+        }
+        
         return getDecimal(P);
+    }
+    public ArrayList getCycleList(){
+        return CycList ;
+    }
+    
+    public void saveArrayNumber(int[] A , ArrayList list){
+        String numbers = "" ;
+        
+        for (int j = 0 ; j< A.length ; j++) {
+            if(j == 4 || j == 8){
+                numbers += "       " ;
+                numbers += A[j] ;
+            }else
+            {
+            numbers += A[j] ;
+            }
+        } 
+        
+        list.add(numbers);
+    }
+    public void saveInitNumber(int[] A, int[] P,ArrayList list){
+        String numbers = "" ;
+        
+        for (int j = 0 ; j< A.length ; j++) {
+            if(j == 4 || j == 8){
+                numbers += "       " ;
+                numbers += A[j] ;
+            }
+            else
+            {
+                numbers += A[j] ;
+            }
+        }
+        numbers += "       " ;
+        for(int k=0 ; k<4 ; k++){
+            numbers += P[k] ;
+        }
+        
+        list.add(numbers);
+    }
+    public ArrayList getNumberList() {
+     return  numList ;
     }
     
     

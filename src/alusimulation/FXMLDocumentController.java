@@ -43,15 +43,32 @@ public class FXMLDocumentController implements Initializable {
     void both(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("BothAlgorithm.fxml"));
                
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
+          Scene scene = new Scene(root);
+          Stage stage = new Stage();
+          stage.initModality(Modality.APPLICATION_MODAL);
 
-             stage.initStyle(StageStyle.UNIFIED);
-            stage.setTitle("Both Algorithm");
-            stage.setResizable(false);
-            stage.setScene(scene);
-            stage.show();
+          stage.initStyle(StageStyle.UNIFIED);
+          stage.setTitle("Both Algorithm");
+          stage.setResizable(false);
+          stage.setScene(scene);
+          stage.show();
+    }
+    
+    @FXML
+    void restoring(ActionEvent event) throws IOException {
+        
+        Parent root = FXMLLoader.load(getClass().getResource("restoring.fxml"));
+               
+          Scene scene = new Scene(root);
+          Stage stage = new Stage();
+          stage.initModality(Modality.APPLICATION_MODAL);
+
+          stage.initStyle(StageStyle.UNIFIED);
+          stage.setTitle("Restoring division algorithm");
+          stage.setResizable(false);
+          stage.setScene(scene);
+          stage.show();
+          
     }
     
 }
