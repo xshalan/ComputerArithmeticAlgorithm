@@ -5,11 +5,14 @@
  */
 package alusimulation;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author noura
  */
-public class nonRestoring {
+public class Restoring {
+
     /** Function to shift shift array **/
     public void leftShift(int A[])
     {        
@@ -99,29 +102,41 @@ public class nonRestoring {
         display(r, 'R');
         System.out.println();
         for (int i = 0; i < 4; i++) {
-            
-            if (P[0] == 0) {
-                // A is positive > 0 
-                leftShift(P);
-                add(P, r); // A = A - M 
-
-            } else {
-                leftShift(P);
-                add(P, S);  // A = A + M
-            }
-            if (P[0] == 0) {
-                // A is positive > 0 
-                P[P.length - 1] = 1;  // Set Q0 = 1 ;
-            } else {
-                P[P.length - 1] = 0;  // Set Q0 = 1 ;
-            }
-            if(i == 3) {
-                if (P[0] != 0) {
-                    add(P, S);  // A = A+M
-                }
-            }
+            leftShift(P);  // left shifting 
+            display(P, 'R');
+            add(P, r);
             display(P, 'P');
+            if (P[0] == 0) {
+                // A > 0
+                P[P.length - 1] = 1; //set Q0 = 1
+            } else {
+                // A < 0 
+                P[P.length - 1] = 0; //set Q0 = 0
+                add(P, S); // Restoring
+            }
+            display(P, 'S');
         }
+        /* 
+        for (int i = 0; i < 4; i++)
+        {   
+            
+            
+            if (P[7] == 0 && P[8] == 0);
+                // do nothing            
+            else if (P[7] == 1 && P[8] == 0)
+                add(P, S);                            
+            else if (P[7] == 0 && P[8] == 1)
+                add(P, A);            
+            else if (P[7] == 1 && P[8] == 1);
+                // do nothing
+ 
+            rightShift(P);
+            saveArrayNumber(P, (ArrayList) numbers_list);
+            display(P, 'P');
+        } */
         return getDecimal(P);
-    } 
+    }
+    
+    
+    
 }

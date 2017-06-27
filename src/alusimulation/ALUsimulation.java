@@ -25,7 +25,8 @@ public class ALUsimulation extends Application {
         stage.setScene(scene);
         stage.initStyle(StageStyle.DECORATED);
         stage.setTitle("ALU Algorithm Simulation");
-       
+        nonRestoring nonRestoring = new nonRestoring() ;
+        nonRestoring.division(7, 3);
         stage.show();
         
 
